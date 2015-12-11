@@ -1,3 +1,5 @@
+import scala.annotation.tailrec
+
 def abs(x: Double): Double = if (x >= 0) x else -x
 
 // Now only sqrt is visible in namespace
@@ -23,3 +25,16 @@ println(sqrt(4))
 println(sqrt(2))
 println(sqrt(1e-6))
 println(sqrt(1e60))
+
+@tailrec
+def gcd(a: Int, b: Int): Int = if (b == 0) a else gcd(b, a % b)
+
+// Tail recursive factorial
+def factorial(n: Int): Int = {
+  @tailrec
+  def factIter(acc: Int, n: Int): Int = {
+    if (n == 0) acc else factIter(acc * n, n - 1)
+  }
+
+  factIter(1, n)
+}
