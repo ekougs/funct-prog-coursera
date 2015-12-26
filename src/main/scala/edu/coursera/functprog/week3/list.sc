@@ -1,4 +1,4 @@
-import edu.coursera.functprog.week3.{Cons, List, ListUtils}
+import edu.coursera.functprog.week3._
 
 // Si le type est implicite pas besoin de le préciser
 ListUtils.singleton(1)
@@ -12,3 +12,6 @@ def get[T](position: Int, list: List[T]): T = {
 val list: List[Int] = new Cons(1, new Cons(2, new Cons(3, ListUtils.singleton(4))))
 get(2, list)
 get(5, list)
+
+// This returns a List[IntSet]
+def prepend(list: List[NonEmptySet], elem: EmptySet)= list prepend elem
