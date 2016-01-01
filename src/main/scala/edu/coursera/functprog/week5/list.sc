@@ -40,3 +40,9 @@ def encode[T](xs: List[T]) = xs match {
 
 encode(letters)
 
+def sum(xs: List[Int]): Int = (0 :: xs) reduceLeft ((x, y) => x + y)
+// Shortcut for (x, y) => x * y
+def prod(xs: List[Int]): Int = ((1 :: xs) foldLeft 1)(_ * _)
+
+sum(fiboUnordered)
+
