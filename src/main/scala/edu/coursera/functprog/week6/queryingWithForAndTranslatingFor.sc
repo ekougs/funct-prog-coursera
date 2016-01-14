@@ -30,3 +30,12 @@ for (book <- books if book.title contains "Program") yield book.title
     if a1 == a2
   } yield a1
   ).distinct
+
+
+val fruits = List("apple", "pear", "orange", "pineapple")
+// Tri personnalisé
+fruits sortWith (_.length < _.length)
+// Tri naturel
+fruits.sorted
+// Same as fruits groupBy (fruit => fruit.head)
+fruits groupBy (_.head)
